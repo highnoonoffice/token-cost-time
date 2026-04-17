@@ -9,11 +9,40 @@ const TASK_RULES = [
   },
   {
     taskClass: 'code_generation',
-    keywords: ['write', 'build', 'create', 'implement', 'function', 'component']
+    keywords: [
+      'write',
+      'build',
+      'create',
+      'implement',
+      'function',
+      'component',
+      'add',
+      'port',
+      'update',
+      'extend',
+      'modify',
+      'new tab',
+      'new route',
+      'new component',
+      'wire',
+      'hook up'
+    ]
   },
   {
     taskClass: 'code_audit',
-    keywords: ['review', 'audit', 'find bugs', 'check', 'analyze code', 'refactor']
+    keywords: [
+      'review',
+      'audit',
+      'find bugs',
+      'check',
+      'analyze code',
+      'refactor',
+      'debug',
+      'fix',
+      'broken',
+      'not working',
+      'failing'
+    ]
   },
   {
     taskClass: 'reasoning',
