@@ -81,11 +81,7 @@ node /path/to/token-cost-time/cli/index.js record \
 
 ## How to Know It's Working
 
-After recording runs, inspect your profile:
-
-```bash
-cat ~/.token-cost-time/profile.json
-```
+After recording runs, inspect your profile at `~/.token-cost-time/profile.json`. Open it in any text editor or JSON viewer.
 
 A cold profile (0 runs) looks like:
 ```json
@@ -135,17 +131,8 @@ Every recorded run appends to:
 
 Each line is one run. You can grep, sort, or analyze it:
 
-```bash
-# See all runs for a specific model
-grep '"model":"claude-sonnet-4"' ~/.token-cost-time/execution-log.jsonl
-
-# Count total runs recorded
-wc -l ~/.token-cost-time/execution-log.jsonl
-
-# See your most expensive runs
-cat ~/.token-cost-time/execution-log.jsonl | \
-  python3 -c "import sys,json; runs=sorted([json.loads(l) for l in sys.stdin], key=lambda x: x.get('costUsd',0), reverse=True); [print(r) for r in runs[:5]]"
-```
+    # See all runs for a specific model
+The log is newline-delimited JSON. Each line is one execution record. Open it in any text editor, import it into a spreadsheet, or parse it with any JSON tool of your choice. Fields: model, taskClass, inputTokens, outputTokens, durationMs, costUsd, retries, timestamp.
 
 ---
 

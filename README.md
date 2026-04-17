@@ -16,12 +16,10 @@ It uses rule-based task classification plus baseline priors and optional local p
 
 From this module directory:
 
-```bash
-npm test
-node cli/index.js calibrate --objective "summarize this document" --model claude-haiku-3
-node cli/index.js compare --objective "implement a React component" --models claude-haiku-3,claude-sonnet-4,gpt-4o
-node cli/index.js record --model claude-haiku-3 --task-class summarization --input-tokens 1340 --output-tokens 290 --duration-ms 4100 --cost 0.00071
-```
+    npm test
+    node cli/index.js calibrate --objective "summarize this document" --model claude-haiku-3
+    node cli/index.js compare --objective "implement a React component" --models claude-haiku-3,claude-sonnet-4,gpt-4o
+    node cli/index.js record --model claude-haiku-3 --task-class summarization --input-tokens 1340 --output-tokens 290 --duration-ms 4100 --cost 0.00071
 
 ## API
 
@@ -31,14 +29,12 @@ node cli/index.js record --model claude-haiku-3 --task-class summarization --inp
 
 Library usage example:
 
-```js
-import { calibrate } from './src/calibrate.js';
+    import { calibrate } from './src/calibrate.js';
 
-const result = calibrate('summarize this architecture memo', 'claude-haiku-3');
-console.log(result.taskClass);
-console.log(result.estimate.costUsd);
-console.log(result.confidence);
-```
+    const result = calibrate('summarize this architecture memo', 'claude-haiku-3');
+    // result.taskClass => 'summarization'
+    // result.estimate.costUsd => estimated dollar cost
+    // result.confidence => 0.2 cold start, rises to 0.95 with 50+ recorded runs
 
 If `profilePath` is omitted, profile defaults to:
 
