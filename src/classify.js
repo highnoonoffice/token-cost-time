@@ -25,7 +25,18 @@ const TASK_RULES = [
       'new route',
       'new component',
       'wire',
-      'hook up'
+      'hook up',
+      'redesign',
+      'rewrite',
+      'migrate',
+      'deploy',
+      'install',
+      'configure',
+      'scaffold',
+      'generate',
+      'render',
+      'style',
+      'layout'
     ]
   },
   {
@@ -41,7 +52,11 @@ const TASK_RULES = [
       'fix',
       'broken',
       'not working',
-      'failing'
+      'failing',
+      'why is',
+      'what is wrong',
+      'diagnose',
+      'inspect'
     ]
   },
   {

@@ -1,6 +1,6 @@
 {
   "name": "token-cost-time",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rule-based token, cost, and duration estimator for LLM tasks.",
   "type": "module",
   "main": "src/calibrate.js",
